@@ -29,7 +29,7 @@
     <dependency>
         <groupId>com.github.rosscreav</groupId>
         <artifactId>SoftEng_Assignment_1</artifactId>
-        <version>v1.6.8</version>
+        <version>v1.7</version>
 	</dependency>
   </dependencies>
  
