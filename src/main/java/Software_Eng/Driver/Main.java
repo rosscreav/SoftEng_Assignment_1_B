@@ -10,6 +10,7 @@ public class Main
 
 {
 
+    //Driver method
     public static void main(String[] args)
     {
 
@@ -19,15 +20,24 @@ public class Main
         Student s3 = new Student("John Doe",24,new DateTime(1996,1,1,0,0),1);
         Student s4 = new Student("Mark King",25,new DateTime(1995,1,1,0,0),1);
         Student s5 = new Student("Martin Moran",31,new DateTime(1989,1,1,0,0),1);
+        //Add students to array
+        ArrayList<Student> Students = new ArrayList<>();
+        Students.add(s1);Students.add(s2);Students.add(s3);Students.add(s4);Students.add(s5);
+
         //Intialise Module
         Module m1 = new Module("Software Engineering","1234");
         Module m2 = new Module("Machine Learning","3000");
         Module m3 = new Module("System of Chip I","4");
+
         //Intialise Course
         DateTime StartDate = new DateTime(2020,1,1,0,0);
         DateTime EndDate = new DateTime(2020,12,1,0,0);
         Course c1 = new Course("Computer Science",StartDate,EndDate);
         Course c2 = new Course("Computer Engineering",StartDate,EndDate);
+        //Add courses to ArrayList
+        ArrayList<Course> Courses= new ArrayList<>();
+        Courses.add(c1);
+        Courses.add(c2);
 
         //Add Studnets to Modules
         m1.addStudent(s1);m1.addStudent(s3);m1.addStudent(s4);
@@ -38,13 +48,9 @@ public class Main
         c1.addModule(m1);c1.addModule(m2);
         c2.addModule(m1);c2.addModule(m2);c2.addModule(m3);
 
-        //Add courses to ArrayList
-        ArrayList<Course> Courses= new ArrayList<>();
-        Courses.add(c1);
-        Courses.add(c2);
 
 
-        //Printout
+        //Printout of course information
         for(Course x:Courses){
             System.out.printf("Course name: %s\n",x);
             for(Module y:x.getModules()){
@@ -54,9 +60,15 @@ public class Main
                     System.out.printf("\t\t\t%s",z);
                 }
             }
-            System.out.print("\n");
+            System.out.print("\n\n");
         }
 
+
+        //Printout all students
+        System.out.println("Global Student List:");
+        for(Student x:Students) {
+            System.out.print(x);
+        }
     }
 
 
